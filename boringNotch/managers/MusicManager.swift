@@ -119,6 +119,13 @@ class MusicManager: ObservableObject {
             
             if let title = information["kMRMediaRemoteNowPlayingInfoTitle"] as? String {
                 self.songTitle = title
+                if (title.contains("Advertisement") || title.contains("Spotify") || title.contains("Sponsor")) && isMuted() == 0 {
+                    print("advertisement detected")
+                    toggleMute()
+                } else if isMuted() == 1 {
+                    print("not advertisement")
+                    toggleMute()
+                }
             }
             
             if let album = information["kMRMediaRemoteNowPlayingInfoAlbum"] as? String {
@@ -219,5 +226,13 @@ class MusicManager: ObservableObject {
     func previousTrack() {
         playbackManager.previousTrack()
         fetchNowPlayingInfo(bypass: true)
+    }
+    
+    func isMuted() -> Int{
+        return playbackManager.isMuted
+    }
+    
+    func toggleMute() {
+        playbackManager.muteUnmute()
     }
 }

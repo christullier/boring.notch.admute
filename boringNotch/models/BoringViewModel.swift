@@ -28,7 +28,7 @@ class BoringViewModel: NSObject, ObservableObject {
     @Published var contentType: ContentType = .normal
     @Published var notchState: NotchState = .closed
     @Published var currentView: NotchViews = .empty
-    @Published var headerTitle: String = "Boring Notch"
+    @Published var headerTitle: String = ""
     @Published var emptyStateText: String = "Play some jams, ladies, and watch me shine! New features coming soon! 🎶 🚀"
     @Published var sizes : Sizes = Sizes()
     @Published var musicPlayerSizes: MusicPlayerElementSizes = MusicPlayerElementSizes()
@@ -41,11 +41,11 @@ class BoringViewModel: NSObject, ObservableObject {
     @AppStorage("showMenuBarIcon") var showMenuBarIcon: Bool = true
     @Published var enableHaptics: Bool = true
     @Published var nothumanface: Bool = false
-    @Published var showBattery: Bool = true
-    @AppStorage("firstLaunch") var firstLaunch: Bool = true
-    @Published var showChargingInfo: Bool = true
+    @Published var showBattery: Bool = false
+    @AppStorage("firstLaunch") var firstLaunch: Bool = false
+    @Published var showChargingInfo: Bool = false
     @Published var chargingInfoAllowed: Bool = true
-    @AppStorage("showWhatsNew") var showWhatsNew: Bool = true
+    @AppStorage("showWhatsNew") var showWhatsNew: Bool = false
     @Published var whatsNewOnClose: (() -> Void)?
     @Published var minimumHoverDuration: TimeInterval = 0.3
     @Published var notchMetastability: Bool = true // True if notch not open

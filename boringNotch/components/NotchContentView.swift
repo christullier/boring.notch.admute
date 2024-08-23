@@ -112,6 +112,25 @@ struct NotchContentView: View {
                                                         }
                                                 }
                                         }
+                                        Button {
+                                            musicManager.toggleMute()
+                                        } label: {
+                                            Rectangle()
+                                                .fill(.clear)
+                                                .contentShape(Rectangle())
+                                                .frame(width: 30, height: 30)
+                                                .overlay {
+                                                    Capsule()
+                                                        .fill(.black)
+                                                        .frame(width: 30, height: 30)
+                                                        .overlay {
+                                                            Image(systemName: "speaker.slash")
+                                                                .foregroundColor(.white)
+                                                                .imageScale(.medium)
+                                                            
+                                                        }
+                                                }
+                                        }
                                     }
                                 }
                                 .allowsHitTesting(!vm.notchMetastability)
