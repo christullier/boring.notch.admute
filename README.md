@@ -1,5 +1,7 @@
 This is a fork of the boring.notch project that takes advantage of the 'now playing' functionality to check the title of the currently playing song
 
+adds a mute button
+
 ## TheBoringNotch v Sleeping Snail 🐌 is Here! 🎉
 
 <img width="150" src="https://github.com/user-attachments/assets/e96f6110-ffad-4d8b-a02d-ead87b7edbe1" />
